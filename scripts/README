@@ -1,0 +1,26 @@
+mysql metrics:
+'Aborted_connects': 'COUNTER',
+               #  The number of failed attempts to connect to the MySQL server.
+'Aborted_clients': 'COUNTER', 
+               # integer,The number of connections that were aborted because the client died without closing the connection properly.
+'Slow_queries': 'COUNTER',
+               #The number of queries that have taken more than long_query_time seconds. 
+                This counter increments regardless of whether the slow query log is enabled.
+'Select_scan': 'COUNTER',
+              # The number of joins that did a full scan of the first table.
+'Select_full_join': 'COUNTER',
+              # The number of joins that perform table scans because they do not use indexes. 
+              If this value is not 0, you should carefully check the indexes of your tables.
+'Sort_scan': 'COUNTER',
+              # The number of sorts that were done by scanning the table.
+'Com_select': 'COUNTER',
+'Com_update': 'COUNTER',
+'Com_insert': 'COUNTER',
+'Com_delete': 'COUNTER',
+              # The Com_xxx statement counter variables indicate the number of times each xxx statement has been executed. There is one status variable for each type of statement. For example, Com_delete and Com_update count DELETE and UPDATE statements, respectively. Com_delete_multi and Com_update_multi are similar but apply to DELETE and UPDATE statements that use multiple-table syntax.
+
+If a query result is returned from query cache, the server increments the Qcache_hits status variable, not Com_select. See Section 8.10.3.4, “Query Cache Status and Maintenance”.
+The discussion at the beginning of this section indicates how to relate these statement-counting status variables to other such variables.
+
+All of the Com_stmt_xxx variables are increased even if a prepared statement argument is unknown or an error occurred during execution. In other words, their values correspond to the number of requests issued, not to the number of requests successfully completed.
+              
