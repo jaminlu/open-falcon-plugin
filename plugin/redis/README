@@ -1,4 +1,11 @@
-:wq
-
-
-
+connected_clients					当前已连接的客户端个数
+blocked_clients					  正在等待阻塞命令（BLPOP、BRPOP、BRPOPLPUSH）的客户端的数量
+used_memory						    由Redis分配的内存的总量，字节数
+used_memory_peak					Redis使用内存的峰值，字节数
+used_cpu_sys							Redis进程消耗的sys cpu
+used_cpu_user							Redis进程消耗的user cpu
+total_commands_processed			每秒执行的命令数，比较准确的QPS
+evicted_keys							因内存used_memory达到maxmemory后，每秒被驱逐的key个数
+expired_keys							因键过期后，被惰性和主动删除清理key的每秒个数
+keys											当前Redis实例的key总数
+keyspace_hit_ratio				查找键的命中率（每个周期60sec精确计算)
